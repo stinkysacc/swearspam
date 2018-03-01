@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        function swear() {
+            var swear = ["shit", "fuck", "cunt", "ass", "dildo", "twat"]
+            var amount = Math.floor(Math.random() * Math.floor(5));
+            
+            return swear[amount];
+        }
+        function myLoop() {
+            var i = 1
+            setTimeout(function () {
+                var poo = swear(); 
+                $("#content").append("<div class='lol'>"+poo+"</div><div class='cuc'>"+poo+"</div><div class='tit'>"+poo+"</div>");
+                i++
+                if (i < 9999999999999999999999999999999999999999999999999999999999) {
+                    myLoop()
+                }
+            }, 50)
+            document.getElementById( 'bottomDiv' ).scrollIntoView();
+        }
+
+        $(document).ready(function () {
+            myLoop();
+
+        }) 
+    </script>
+    <style>
+        .lol {
+            color: red
+        }
+
+        .tit {
+            color: blue
+        }
+
+        .cuc {
+            color: white
+        }
+
+        body {
+            background-color: black
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="content"></div>
+    <div id='bottomDiv'></div>
+</body>
+
+</html>
